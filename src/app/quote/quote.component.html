@@ -3,15 +3,15 @@
 
 <div class="container">
   <ul>
-    <li *ngFor="let quote of quotes; let i=index ">        
+    <li *ngFor="let quote of quotes; let i = index">
       <div class="card">
         <div class="card-header">
           Quote
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
-            <p>{{quote.wiseSaying}}</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            <p>{{ quote.wiseSaying  }}</p>
+            <footer class="blockquote-footer"> <cite title="Source Title"> <app-author [quote]='quote'></app-author> </cite></footer>
           </blockquote>
           <p class="card-text"><small class="text-muted">Last updated 3 days</small></p>
           <p class="card-text"><small class="text-muted">Posted by Jon</small></p>
@@ -19,7 +19,7 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <a href="#!" class="card-link"   ><i class="fas fa-arrow-up"><span class="badge badge-light">9 up-votes</span></i></a>
+          <a href="#!" class="card-link"><i class="fas fa-arrow-up"><span class="badge badge-light">9 up-votes</span></i></a>
           <a href="#!" class="card-link"><i class="fas fa-arrow-down"><span class="badge badge-light">8 down-votes</span></i></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-pen">Edit</i></small></a>
@@ -28,6 +28,8 @@
         </div>
       </div>
       <hr>
-      </div>  
+
     </li>
   </ul>
+
+</div>
