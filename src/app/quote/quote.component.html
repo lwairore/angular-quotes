@@ -22,8 +22,8 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <a href="#!" class="card-link"><app-upvote-quote [quote]='quote' (isUpVote)='incrementUpVote($event)' ></app-upvote-quote><span class="badge badge-light">9 up-votes</span></a>
-          <a href="#!" class="card-link"><i class="fas fa-arrow-down"><span class="badge badge-light">8 down-votes</span></i></a>
+          <a href="#!" class="card-link"><app-upvote-quote [quote]='quote' (isUpVote)='incrementUpVote($event, i)' ></app-upvote-quote><span class="badge badge-light">{{ this.totalUpVote }} up-votes</span></a>
+          <a href="#!" class="card-link"><app-down-vote [quote]='quote'></app-down-vote><span class="badge badge-light">8 down-votes</span></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-pen">Edit</i></small></a>
           <a class="card-link"><small class="text-muted"> <app-delete-quote  [quote]='quote' (isComplete)='completeQuote($event,i)' ></app-delete-quote> </small></a>
