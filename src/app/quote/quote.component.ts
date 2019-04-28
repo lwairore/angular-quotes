@@ -43,6 +43,22 @@ export class QuoteComponent implements OnInit {
     }
     
   }
+
+  decrementVote(k, index) {
+    this.counter = 0;
+    if(this.quotes[index].userDownVote == true) {
+      this.counter = this.counter + 1;
+      this.totalDownVote += this.counter;
+      this.counter = 0;
+      this.quotes[index].userDownVote = false;
+    } else if(this.quotes[index].userDownVote == false){
+      this.totalDownVote = this.totalDownVote - 1;
+      this.quotes[index].userDownVote = true;
+      if(this.totalDownVote < 0) {
+        this.totalDownVote = 0;
+      }
+    }
+  }
   constructor() { }
 
   ngOnInit() {
