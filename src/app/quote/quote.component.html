@@ -1,8 +1,7 @@
-<h1>Quotes</h1>
-<hr>
-<div *ngFor="let quot of quotes">
-    <app-quote-form [quot]='quot'></app-quote-form>
-</div>
+
+  
+  
+
 
 
 <div class="container">
@@ -27,13 +26,20 @@
           <a href="#!" class="card-link"><i class="fas fa-arrow-down"><span class="badge badge-light">8 down-votes</span></i></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-pen">Edit</i></small></a>
-          <a class="card-link"><small class="text-muted"><i class="fas fa-trash-alt">Delete</i></small></a>
+          <a class="card-link"><small class="text-muted"> <app-delete-quote  [quote]='quote'  (isComplete)='completeQuote($vent,i)' ></app-delete-quote> </small></a>
           <a class="card-link"><small class="text-muted"><i class="fab fa-font-awesome-flag">Flag</i></small></a>
         </div>
       </div>
       <hr>
-
+      
     </li>
+   
   </ul>
 
 </div>
+
+<ul>
+    <li *ngFor="let quote of quotes; let i = index">
+      <app-quote-form [quote]='quote'></app-quote-form>
+</li>
+</ul>
