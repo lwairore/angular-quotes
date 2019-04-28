@@ -4,13 +4,13 @@
   <h1>Quote Form</h1>
   <form>
     <div class="form-group">
-      <label for="wiseSaying">Name</label>
+      <label for="wiseSaying">Quote</label>
       <input type="text" class="form-control" id="wiseSaying" required [(ngModel)]="quote.wiseSaying" name="wiseSaying" >
-      TODO: {{quote.wiseSaying}}
+      
     </div>
     <div class="form-group">
       <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" required>
+      <input type="text" class="form-control" id="author" required [(ngModel)]="quote.author" name="author" >
     </div>
     <div class="form-group">
       <label for="postedBy">Posted by</label>
