@@ -5,16 +5,19 @@
   <form #quoteForm="ngForm">
     <div class="form-group">
       <label for="wiseSaying">Quote</label>
-      <input type="text" class="form-control" id="wiseSaying" required [(ngModel)]="quote.wiseSaying" name="wiseSaying" >
+      <input type="text" class="form-control" id="wiseSaying" required [(ngModel)]="quote.wiseSaying" name="wiseSaying" #wiseSaying="ngModel">
+      <div [hidden]="wiseSaying.valid || wiseSaying.pristine" class="alert alert-danger">Quote is required</div>
       
     </div>
     <div class="form-group">
       <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" required [(ngModel)]="quote.author" name="author" >
+      <input type="text" class="form-control" id="author" required [(ngModel)]="quote.author" name="author" #author="ngModel" >
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">Original author's name of the quote is required.</div>
     </div>
     <div class="form-group">
       <label for="postedBy">Posted by</label>
-      <input type="text" class="form-control" id="postedBy" required [(ngModel)]='quote.postedBy' name="postedBy" >
+      <input type="text" class="form-control" id="postedBy" required [(ngModel)]='quote.postedBy' name="postedBy" #postedBy="ngModel">
+      <div [hidden]="postedBy.valid || postedBy.pristine" class="alert alert-danger">Posted by name is required</div>
     </div>
 
     <button type="submit" class="btn btn-success">Add Quote</button>
