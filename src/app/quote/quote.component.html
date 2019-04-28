@@ -1,6 +1,9 @@
 <h1>Quotes</h1>
 <hr>
-<app-quote-form></app-quote-form>
+<div *ngFor="let quot of quotes">
+    <app-quote-form [quot]='quot'></app-quote-form>
+</div>
+
 
 <div class="container">
   <ul>
