@@ -8,8 +8,8 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote( 'Our greatest glory is not in never falling, but in rising every time we fall.', 'Confucius', '~john' ),
-    new Quote( 'All our dreams can come true, if we have the courage to pursue them.', 'Walt Disney', 'J.Kelly',  )
+    new Quote( 'Our greatest glory is not in never falling, but in rising every time we fall.', 'Confucius', '~john', new Date(Date.now()) ),
+    new Quote( 'All our dreams can come true, if we have the courage to pursue them.', 'Walt Disney', 'J.Kelly', new Date(Date.now())  )
   ]
 
 
