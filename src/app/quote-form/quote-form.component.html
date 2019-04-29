@@ -1,27 +1,63 @@
-<span>Hello {{quote.wiseSaying}}</span>
-
 <div class="container">
-  <h1>Quote Form</h1>
-  <form (ngSubmit)="onSubmit()" #quoteForm="ngForm">
+  <h1>Add a quote</h1>
+  <form (ngSubmit)="onSubmit()" #quoteForm="ngForm" style="margin-right: 50%; margin-left: -20px;">
     <div class="form-group">
       <label for="wiseSaying">Quote</label>
-      <input type="text" class="form-control" id="wiseSaying" required [(ngModel)]="quote.wiseSaying" name="wiseSaying" #wiseSaying="ngModel">
+      <input type="text" class="form-control" id="wiseSaying" required [(ngModel)]="quote.wiseSaying" name="wiseSaying"
+        #wiseSaying="ngModel" placeholder="quote">
       <div [hidden]="wiseSaying.valid || wiseSaying.pristine" class="alert alert-danger">Quote is required</div>
-      
+
     </div>
     <div class="form-group">
       <label for="author">Author</label>
-      <input type="text" class="form-control" id="author" required [(ngModel)]="quote.author" name="author" #author="ngModel" >
-      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">Original author's name of the quote is required.</div>
+      <input type="text" class="form-control" id="author" required [(ngModel)]="quote.author" name="author"
+        #author="ngModel">
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger">Original author's name of the quote is
+        required.</div>
     </div>
     <div class="form-group">
       <label for="postedBy">Posted by</label>
-      <input type="text" class="form-control" id="postedBy" required [(ngModel)]='quote.postedBy' name="postedBy" #postedBy="ngModel">
+      <input type="text" class="form-control" id="postedBy" required [(ngModel)]='quote.postedBy' name="postedBy"
+        #postedBy="ngModel">
       <div [hidden]="postedBy.valid || postedBy.pristine" class="alert alert-danger">Posted by name is required</div>
     </div>
 
-    <button type="submit" class="btn btn-success">Add Quote</button>
-    <button type="button" class="btn btn-default" (click)="newQuote()" >New Quote</button>
+    <button type="submit" class="btn btn-success" [disabled]="!quoteForm.form.valid">Add Quote</button>
+    
 
   </form>
+</div>
+
+
+<div class="container">
+  <div [hidden]="!submitted">
+    <div style="margin-left: 40px">
+      <div class="card">
+        <div class="card-header">
+          Quote
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{ quote.wiseSaying }}</p>
+            <footer class="blockquote-footer"><cite title="Source Title">{{ quote.author }}</cite></footer>
+          </blockquote>
+          <p class="card-text"><small class="text-muted">Posted on {{quote.postedOn | date }}</small></p>
+          <p class="card-text"><small class="text-muted">Posted by {{ quote.postedBy }}</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <a href="#!" class="card-link"><i class="fas fa-arrow-up fa-2x" (click)='upVote()'></i><span
+              class="badge badge-light">{{this.totalUpVote}} up-votes</span></a>
+          <a href="#!" class="card-link"><i class="fas fa-arrow-down fa-2x" (click)='downVote()'></i><span
+                class="badge badge-light">{{this.totalDownVote}} down-votes</span></a>
+          <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>          
+          <a class="card-link"><small class="text-muted"><i class="fas fa-trash-alt"
+                (click)="submitted=false">Delete</i></small></a>
+          <a class="card-link"><small class="text-muted"><i class="fab fa-font-awesome-flag">Flag</i></small></a>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
 </div>

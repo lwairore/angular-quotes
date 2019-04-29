@@ -1,12 +1,14 @@
-
+<nav class="navbar sticky-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">Quote | Vet</a>
+</nav>
+<div *ngFor="let quote of quotes;">
+  <app-quote-form [quote]='quote' [quotes]='quotes'></app-quote-form>
+</div>
   
-  
-
-
-
 <div class="container">
   <ul>
     <li *ngFor="let quote of quotes; let i = index">
+        
       <div class="card">
         <div class="card-header">
           Quote
@@ -25,7 +27,7 @@
           <a href="#!" class="card-link"><app-upvote-quote [quote]='quote' (isUpVote)='incrementUpVote($event, i)' ></app-upvote-quote><span class="badge badge-light">{{ this.totalUpVote }} up-votes</span></a>
           <a href="#!" class="card-link"><app-down-vote [quote]='quote' (isDownVote)='decrementVote($event, i)' ></app-down-vote><span class="badge badge-light">{{ this.totalDownVote }} down-votes</span></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>
-          <a class="card-link"><small class="text-muted"><i class="fas fa-pen">Edit</i></small></a>
+          
           <a class="card-link"><small class="text-muted"> <app-delete-quote  [quote]='quote' (isComplete)='completeQuote($event,i)' ></app-delete-quote> </small></a>
           <a class="card-link"><small class="text-muted"><i class="fab fa-font-awesome-flag">Flag</i></small></a>
         </div>
@@ -38,8 +40,5 @@
 
 </div>
 
-<ul>
-    <li *ngFor="let quote of quotes; let i = index">
-      <app-quote-form [quote]='quote'></app-quote-form>
-</li>
-</ul>
+
+

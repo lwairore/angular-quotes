@@ -8,6 +8,10 @@ import { QuoteComponent } from './quote/quote.component';
 import { AuthorComponent } from './author/author.component';
 import { PostedByComponent } from './posted-by/posted-by.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { DeleteQuoteComponent } from './delete-quote/delete-quote.component';
+import { UpvoteQuoteComponent } from './upvote-quote/upvote-quote.component';
+import { DownVoteComponent } from './down-vote/down-vote.component';
+import { PostedOnPipe } from './posted-on.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     QuoteComponent,
     AuthorComponent,
     PostedByComponent,
-    QuoteFormComponent
+    QuoteFormComponent,
+    DeleteQuoteComponent,
+    UpvoteQuoteComponent,
+    DownVoteComponent,
+    PostedOnPipe
   ],
   imports: [
     BrowserModule,
