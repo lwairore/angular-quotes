@@ -19,7 +19,7 @@
             <footer class="blockquote-footer"> <cite title="Source Title"> <app-author [quote]='quote'></app-author> </cite></footer>
           </blockquote>
           <p class="card-text"><small class="text-muted">Posted {{ quote.postedOn|date }}  </small></p>
-          <p class="card-text"><small class="text-muted">Posted by <app-posted-by [quote]='quote'></app-posted-by>  </small></p>
+          <p class="card-text"><small class="text-muted">Posted by {{quote.athor}} <app-posted-by [quote]='quote'></app-posted-by>  </small></p>
         </div>
       </div>
       <div class="card">
