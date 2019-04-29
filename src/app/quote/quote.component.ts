@@ -15,6 +15,7 @@ export class QuoteComponent implements OnInit {
 
   completeQuote(isComplete,index){
     if(isComplete){
+      alert("You cannot delete a quote that you haven't posted")
       this.quotes.splice(index,0)
       
     }

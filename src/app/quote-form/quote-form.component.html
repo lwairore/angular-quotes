@@ -52,8 +52,38 @@
           <a href="#!" class="card-link"><i class="fas fa-arrow-down fa-2x" (click)='downVote()'></i><span
                 class="badge badge-light">{{this.totalDownVote}} down-votes</span></a>
           <a class="card-link"><small class="text-muted"><i class="fas fa-share">Share</i></small></a>          
-          <a class="card-link"><small class="text-muted"><i class="fas fa-trash-alt"
-                (click)="submitted=false">Delete</i></small></a>
+          <a class="card-link"><small class="text-muted"><!-- Button trigger modal -->
+            <i  class="fas fa-trash-alt" data-toggle="modal" data-target="#exampleModal">
+              Delete
+            </i>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="alert alert-warning" role="alert">
+                      Wooohooo!
+                    </div>
+                    This action <strong>cannot</strong> be undone. This will permanently delete {{quote.wiseSaying}} quote, up-votes and down-votes will be removed.
+                    <br>
+                    Once you delete a repository, there is no going back. Please be certain.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="submitted=false" data-dismiss="modal">Yes, am sure</button>
+                  </div>
+                </div>
+              </div>
+            </div></small></a>
+           <!-- Modal -->
+    
           <a class="card-link"><small class="text-muted"><i class="fab fa-font-awesome-flag">Flag</i></small></a>
         </div>
       </div>
