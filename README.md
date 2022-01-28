@@ -1,4 +1,4 @@
-# QuoteApk
+# Angular Quote Application
 We all have that favorite quote. But what makes some turns of phrase so resonant?
 
 When things get tough, many people turn to a motivational quote for a bit of inspiration. Some of these pithy sayings have become celebrated parts of society’s lexicon. Some include:
