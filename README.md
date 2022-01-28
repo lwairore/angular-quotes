@@ -30,10 +30,6 @@ UpVote   | Click(again) | Decreases the upvote to the original value            
 DownVote | Click(once)  | Increases the downvote value by one                        |
 DownVote | Click(again) | Decreases the downvote value by one(to the original value) |
 
-
-## Previews
-**[Click here](https://lwairore.github.io/Quotes/)** to see the live site.
-
 ## Feedback
 Your opinion matters. 
 Have some ideas how to improve my product?
